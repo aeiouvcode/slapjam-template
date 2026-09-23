@@ -1,0 +1,32 @@
+; Godot 4 project - Slapjam portrait template.
+; Edit through the editor UI where possible.
+
+config_version=5
+
+[application]
+
+config/name="Slapjam Template"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+
+[display]
+
+; 720x1280 portrait design surface.
+window/size/viewport_width=720
+window/size/viewport_height=1280
+; canvas_items stretch + expand aspect: scales the 720x1280 layout to any
+; phone screen; taller phones simply see more vertical space.
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[input_devices]
+
+; Lets the same touch controls be tested with a mouse on desktop.
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+; Mobile renderer: the right baseline for phone GPUs in the web export.
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
