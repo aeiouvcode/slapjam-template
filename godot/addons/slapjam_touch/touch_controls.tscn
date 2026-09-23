@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://addons/slapjam_touch/virtual_joystick.gd" id="1_vj"]
+[ext_resource type="Script" path="res://addons/slapjam_touch/touch_button.gd" id="2_tb"]
+
+[node name="TouchControls" type="CanvasLayer"]
+
+[node name="Joystick" type="Control" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -356.0
+offset_right = 308.0
+offset_bottom = -96.0
+script = ExtResource("1_vj")
+
+[node name="Base" type="ColorRect" parent="Joystick"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.08)
+
+[node name="Knob" type="ColorRect" parent="Joystick"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 75.0
+offset_right = 185.0
+offset_bottom = 185.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0.28)
+
+[node name="ButtonB" type="Control" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 330.0
+offset_top = -230.0
+offset_right = 480.0
+offset_bottom = -80.0
+script = ExtResource("2_tb")
+label = "B"
+
+[node name="Base" type="ColorRect" parent="ButtonB"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.18)
+
+[node name="Label" type="Label" parent="ButtonB"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 44
+text = "B"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonA" type="Control" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 514.0
+offset_top = -360.0
+offset_right = 664.0
+offset_bottom = -210.0
+script = ExtResource("2_tb")
+label = "A"
+
+[node name="Base" type="ColorRect" parent="ButtonA"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.18)
+
+[node name="Label" type="Label" parent="ButtonA"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 44
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
