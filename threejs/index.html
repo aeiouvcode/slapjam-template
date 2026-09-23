@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Slapjam Template (Three.js)</title>
+<style>
+  html, body {
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    background: #000; overflow: hidden;
+    touch-action: none;                 /* no scroll/zoom gestures inside itch iframe */
+    -webkit-user-select: none; user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+  }
+  /* #stage is the 720x1280 design surface. scaler.js scales/centers it. */
+  #stage { position: absolute; transform-origin: center center; }
+  #game-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+  /* --- touch controls overlay (DOM, drawn above the WebGL canvas) --- */
+  #controls { position: absolute; inset: 0; pointer-events: none; }
+  #joystick {
+    position: absolute; left: 48px; bottom: 96px; width: 260px; height: 260px;
+    border-radius: 50%; background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.25);
+    pointer-events: auto;
+  }
+  #knob {
+    position: absolute; left: 50%; top: 50%; width: 110px; height: 110px;
+    margin: -55px 0 0 -55px; border-radius: 50%;
+    background: rgba(255,255,255,0.28);
+  }
+  .btn {
+    position: absolute; width: 150px; height: 150px; border-radius: 50%;
+    background: rgba(255,255,255,0.10); border: 2px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.8); font: 700 44px/150px system-ui, sans-serif;
+    text-align: center; pointer-events: auto;
+  }
+  .btn.down { background: rgba(255,255,255,0.35); }
+  #btn-a { right: 56px;  bottom: 210px; }
+  #btn-b { right: 230px; bottom: 80px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="game-canvas"></canvas>
+  <div id="controls">
+    <div id="joystick"><div id="knob"></div></div>
+    <div class="btn" id="btn-b">B</div>
+    <div class="btn" id="btn-a">A</div>
+  </div>
+</div>
+<script type="importmap">
+  { "imports": { "three": "./vendor/three.module.min.js" } }
+</script>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
