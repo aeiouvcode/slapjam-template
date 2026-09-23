@@ -1,0 +1,12 @@
+# Godot
+.godot/
+*.import
+build/
+export/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# zips produced for itch upload
+*.zip
